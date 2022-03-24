@@ -5,4 +5,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get('/', (req, res) => res.send(`<h1> Execuntando na porta: ${PORT} </h1>`));
-app.listen(PORT, () => console.log(`Online na porta: ${PORT}`));
+app.listen(PORT, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
